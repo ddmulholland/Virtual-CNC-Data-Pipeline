@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual CNC Data Pipeline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 Virtual CNC Data Pipeline</h1>
+            <p>Real-time CNC Machine Monitoring & Visualization</p>
+        </header>
+
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="label">Machine ID:</span>
+                <span id="machine-id" class="value">-</span>
+            </div>
+            <div class="status-item">
+                <span class="label">Status:</span>
+                <span id="status" class="value status-running">-</span>
+            </div>
+            <div class="status-item">
+                <span class="label">Last Update:</span>
+                <span id="timestamp" class="value">-</span>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="card">
+                <h2>🌡️ Temperature</h2>
+                <div class="metric-value" id="temperature">--</div>
+                <div class="metric-unit">°C</div>
+                <canvas id="temp-chart"></canvas>
+            </div>
+
+            <div class="card">
+                <h2>⚙️ Spindle Speed</h2>
+                <div class="metric-value" id="spindle-speed">--</div>
+                <div class="metric-unit">RPM</div>
+                <canvas id="spindle-chart"></canvas>
+            </div>
+
+            <div class="card">
+                <h2>📊 Feed Rate</h2>
+                <div class="metric-value" id="feed-rate">--</div>
+                <div class="metric-unit">mm/min</div>
+                <canvas id="feed-chart"></canvas>
+            </div>
+
+            <div class="card">
+                <h2>📍 Position</h2>
+                <div class="position-data">
+                    <div class="axis">
+                        <span class="axis-label">X:</span>
+                        <span id="pos-x" class="axis-value">0.000</span>
+                    </div>
+                    <div class="axis">
+                        <span class="axis-label">Y:</span>
+                        <span id="pos-y" class="axis-value">0.000</span>
+                    </div>
+                    <div class="axis">
+                        <span class="axis-label">Z:</span>
+                        <span id="pos-z" class="axis-value">0.000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📳 Vibration</h2>
+                <div class="metric-value" id="vibration">--</div>
+                <div class="metric-unit">mm/s</div>
+            </div>
+
+            <div class="card">
+                <h2>⚡ Power</h2>
+                <div class="metric-value" id="power">--</div>
+                <div class="metric-unit">kW</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
