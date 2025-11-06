@@ -13,6 +13,8 @@ MACHINE_ID = 'CNC_01'
 # TODO: Add machine specific settings (chipoad, N of flutes, set rpm, feedrate)
 API_URL = 'http://127.0.0.1:5000/update'
 
+SPEED_MIN, SPEED_MAX = 1000, 3000
+TEMP_MIN, TEMP_MAX = 25.0, 75.0
 
 def generate_data():
   """
@@ -22,9 +24,9 @@ def generate_data():
   """
   return {
       "machine_id": MACHINE_ID,
-      "spindle_speed": random.randint(1000, 3000),
+      "spindle_speed": random.randint(SPEED_MIN, SPEED_MAX),
       "temperature": random.uniform(
-          25.0, 75.0
+          TEMP_MIN, TEMP_MAX
       ),  # TODO: add probability to each random occurance, in future flag out of range values, specifically overheating
       "status": random.choice(['RUNNING', 'IDLE', 'FAULT']),
   }
