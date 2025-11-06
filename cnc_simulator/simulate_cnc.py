@@ -34,10 +34,10 @@ def main():
   while True:
     data = generate_data()
     print(f"Sending: {data}")
-    try:
-      requests.post(API_URL, json=data)
-    except Exception as e:
-      print(f"Error sending data: {e}")
+    # try:
+    #   requests.post(API_URL, json=data)
+    # except Exception as e:
+    #   print(f"Error sending data: {e}")
     time.sleep(2)
 
 
